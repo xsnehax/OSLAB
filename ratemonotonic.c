@@ -173,7 +173,7 @@ void rate_monotonic(int time)
 int main(int argc, char *argv[])
 {
     int option = 0;
-    printf("3. Rate Monotonic Scheduling\n");
+    printf("Rate Monotonic Scheduling\n");
     printf("Select > ");
     scanf("%d", &option);
     printf("-----------------------------\n");
