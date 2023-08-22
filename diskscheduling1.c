@@ -18,39 +18,6 @@ void fcfs(int queue[], int n, int head) {
     printf("\nTotal head movement: %d\n\n", totalMovement);
 }
 
-// Function to implement SSTF scheduling algorithm
-void sstf(int queue[], int n, int head) {
-    int totalMovement = 0;
-    int visited[n];
-
-    for (int i = 0; i < n; i++) {
-        visited[i] = 0;  //initialise entire visited array to 0(all unvisited initially)
-    }
-
-    printf("SSTF Scheduling\n");
-    printf("Sequence of movement: %d ", head);
-
-    for (int i = 0; i < n; i++) {
-        int minDistance = 9999;
-        int index = -1;
-
-       //for loop to find min dist from each point
-        for (int j = 0; j < n; j++) {
-            if (visited[j]==0 && abs(queue[j] - head) < minDistance) {
-                minDistance = abs(queue[j] - head);
-                index = j;
-            }
-        }
-
-        visited[index] = 1;
-        totalMovement += minDistance;
-        head = queue[index];
-        printf("-> %d ", head);
-    }
-
-    printf("\nTotal head movement: %d\n\n", totalMovement);
-}
-
 // Function to implement SCAN scheduling algorithm
 void scan(int queue[], int n, int head, int direction) {
     int totalMovement = 0;
